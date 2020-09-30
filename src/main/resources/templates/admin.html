@@ -257,7 +257,12 @@
                             document.location.href = document.location.href;
                         },
                         error : function(error) {
-                            alert("Failure! This category is in use by some news")
+                            if(error.status==200){
+                                document.location.href = document.location.href;
+                            }else{
+                                alert("Failure! This category is in use by some news!")
+                            }
+
                         }
                     });
                 }
@@ -275,7 +280,11 @@
                             document.location.href = document.location.href;
                         },
                         error : function(error) {
-                            alert("Failure!")
+                            if(error.status==200){
+                                document.location.href = document.location.href;
+                            }else{
+                                alert("Failure!")
+                            }
                         }
                     });
                 }
@@ -293,7 +302,11 @@
                             document.location.href = document.location.href;
                         },
                         error : function(error) {
-                            alert("Failure!")
+                            if(error.status==200){
+                                document.location.href = document.location.href;
+                            }else{
+                                alert("Failure!")
+                            }
                         }
                     });
                 }
