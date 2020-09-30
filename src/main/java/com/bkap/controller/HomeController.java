@@ -25,7 +25,6 @@ import java.util.Map;
  * @since 24/09/2020
  */
 @Controller
-@RequestMapping("/home")
 public class HomeController {
     private CategoryService categoryService;
     private ProjectService projectService;

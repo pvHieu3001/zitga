@@ -27,7 +27,7 @@ import java.util.List;
  * @since 24/09/2020
  */
 @Controller
-@RequestMapping("/administrator")
+@RequestMapping("/zitga")
 public class AdminController {
     private CategoryService categoryService;
     private ProjectService projectService;
