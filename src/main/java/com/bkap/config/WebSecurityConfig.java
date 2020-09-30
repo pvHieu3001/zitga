@@ -72,22 +72,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
                 .authorizeRequests()
-                    .antMatchers(HttpMethod.GET, "/administrator/**").hasRole("ADMIN")
-                    .antMatchers(HttpMethod.POST, "/administrator/**").hasRole("ADMIN")
-                    .antMatchers(HttpMethod.PUT, "/administrator/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.GET, "/zitga/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.POST, "/zitga/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.PUT, "/zitga/**").hasRole("ADMIN")
                     //.anyRequest().permitAll()
                     .and()
                 .formLogin()
-                    .loginPage("/administrator/login")
+                    .loginPage("/zitga/login")
                     .loginProcessingUrl("/login-action").permitAll()
                     .usernameParameter("username")
                     .passwordParameter("password")
-                    .failureUrl("/administrator/login?error=true")
-                    .defaultSuccessUrl("/administrator/home")
+                    .failureUrl("/zitga/login?error=true")
+                    .defaultSuccessUrl("/zitga/home")
                     .and()
                 .logout()
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/administrator/login")
+                    .logoutSuccessUrl("/zitga/login")
                     .and();
                 //.exceptionHandling();
                 //.authenticationEntryPoint(jwtAuthenticationEntryPoint);
@@ -97,8 +97,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity) throws Exception {
-        webSecurity.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/administrator/js/**", "/images/**",
-                "/administrator/vendor/**", "/js/**");
+        webSecurity.ignoring().antMatchers("/resources/**", "/static/**", "/css/**", "/zitga/js/**", "/images/**",
+                "/zitga/vendor/**", "/js/**");
     }
 
 }
